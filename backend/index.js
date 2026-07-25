@@ -19,6 +19,10 @@ app.use("/api/auth", auth_router);
 app.use("/api/chat", chat_router);
 
 
+app.get("/", (req, res) => {
+    res.send("KryptAI backend is running 🚀");
+});
+
 app.listen(8080, () => {
     console.log("Server Started!");
     connectDB();
