@@ -22,7 +22,7 @@ module.exports.login = async (req, res) => {
             });
         }
 
-        res.cookie("userId", user._id.toString(), { httpOnly: true, secure: false, sameSite: "lax", maxAge: 1000 * 60 * 60 * 24 * 7 });
+        res.cookie("userId", user._id.toString(), { httpOnly: true, secure: true, sameSite: "none", maxAge: 1000 * 60 * 60 * 24 * 7 });
         return res.json({ success: true, user });
     } catch (error) {
         return res.status(401).json({ message: error.message });
@@ -32,7 +32,7 @@ module.exports.login = async (req, res) => {
 
 module.exports.logout = async (req, res) => {
     try {
-        res.clearCookie("userId", { httpOnly: true, secure: false, sameSite: "lax" });
+        res.clearCookie("userId", { httpOnly: true, secure: true, sameSite: "none" });
         return res.status(200).json({ success: true, message: "Logged out successfully" });
     } catch (error) {
         return res.status(500).json({ success: false, message: error.message });

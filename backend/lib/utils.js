@@ -12,7 +12,7 @@ module.exports.protectRoute = async (req, res, next) => {
 
         const user = await User.findById(userId);
         if (!user) {
-            res.clearCookie("userId", { httpOnly: true, secure: false, sameSite: "lax" });
+            res.clearCookie("userId", { httpOnly: true, secure: true, sameSite: "none" });
             return res.status(401).json({ success: false, message: "User not found" });
         }
 
