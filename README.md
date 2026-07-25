@@ -5,7 +5,7 @@ KryptAI is a full-stack AI assistant built as a project using the MERN stack, La
 
 ## 🚀 Live Demo
 
-**Deployment:** [Add your Render deployment link here](YOUR_DEPLOYMENT_LINK)
+**Deployment:** https://kryptai-frontend.onrender.com
 
 
 ## ✨ Features
