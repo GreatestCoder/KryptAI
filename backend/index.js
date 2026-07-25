@@ -12,7 +12,7 @@ const path = require("path");
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+app.use(cors({ origin: process.env.FRONTEND_URL, credentials: true }));
 app.use("/uploads", express.static(path.join(__dirname, "public/uploads")));
 app.use("/generated", express.static(path.join(__dirname, "public/generated")));
 app.use("/api/auth", auth_router);
