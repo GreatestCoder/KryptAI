@@ -1,0 +1,108 @@
+# ================================
+# Dependencies
+# ================================
+
+node_modules/
+**/node_modules/
+
+
+# ================================
+# Environment Variables / Secrets
+# ================================
+
+.env
+.env.*
+!.env.example
+
+# Local environment files
+*.local
+
+
+# ================================
+# Build / Production Files
+# ================================
+
+dist/
+**/dist/
+
+dist-ssr/
+**/dist-ssr/
+
+build/
+**/build/
+
+
+# ================================
+# Logs
+# ================================
+
+logs/
+*.log
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+
+# ================================
+# Runtime / Temporary Files
+# ================================
+
+*.tmp
+*.temp
+
+tmp/
+temp/
+
+
+# ================================
+# KryptAI Uploaded / Generated Files
+# ================================
+
+backend/public/uploads/*
+backend/public/generated/*
+
+
+# Firebase / Google service account credentials
+backend/serviceAccountKey.json
+
+
+# ================================
+# Editor / IDE
+# ================================
+
+.vscode/*
+!.vscode/extensions.json
+
+.idea/
+
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+
+# ================================
+# OS Files
+# ================================
+
+.DS_Store
+Thumbs.db
+
+
+# ================================
+# Coverage / Testing
+# ================================
+
+coverage/
+.nyc_output/
+
+
+# ================================
+# Misc
+# ================================
+
+*.pid
