@@ -1,5 +1,6 @@
 const dotenv = require("dotenv");
 dotenv.config();
+
 const express = require("express");
 const app = express();
 const { connectDB } = require("./lib/db");
@@ -8,11 +9,18 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const chat_router = require("./routes/chat_routes");
 const path = require("path");
+const fs = require("fs");
+
+
+const uploadsDir = path.join(__dirname, "public", "uploads");
+const generatedDir = path.join(__dirname, "public", "generated");
+fs.mkdirSync(uploadsDir, { recursive: true });
+fs.mkdirSync(generatedDir, { recursive: true });
 
 
 app.use(express.json());
 app.use(cookieParser());
-app.use(cors({ origin: process.env.FRONTEND_URL, credentials: true }));
+app.use(cors({origin: process.env.FRONTEND_URL, credentials: true}));
 app.use("/uploads", express.static(path.join(__dirname, "public/uploads")));
 app.use("/generated", express.static(path.join(__dirname, "public/generated")));
 app.use("/api/auth", auth_router);
@@ -26,4 +34,4 @@ app.get("/", (req, res) => {
 app.listen(8080, () => {
     console.log("Server Started!");
     connectDB();
-})
+});
